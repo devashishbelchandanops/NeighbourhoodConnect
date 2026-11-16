@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Report and track neighbourhood issues.">
+    <title>Neighbourhood Connect | Issue Reporting</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =================================
+         1. NAVIGATION BAR
+         ================================= -->
+
+    <header class="site-header">
+ <!-- Website logo and name -->
+        <a class="brand" href="#home">
+            <span class="brand-mark">N</span>
+            <span>Neighbourhood Connect</span>
+        </a>
+
+        <!-- Navigation links -->
+        <nav class="main-nav">
+
+            <a href="#home">Home</a>
+
+            <a href="#report">Report an Issue</a>
+
+            <a href="#issues">Browse Issues</a>
+
+        </nav>
+
+        <!-- Button to report an issue -->
+        <a class="header-cta" href="#report">
+            + New Report
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================
+             2. HOME / HERO SECTION
+             ================================= -->
+
+        <section class="hero section" id="home">
+
+            <!-- Left side: Introduction -->
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    YOUR NEIGHBOURHOOD, YOUR VOICE
+                </p>
+
+                <h1>
+                    Small reports.<br>
+                    <span>Better neighbourhoods.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Spot a problem in your area?
+                    Report it, follow its progress,
+                    and help make your neighbourhood
+                    safer and cleaner.
+                </p>
+
+                <!-- Hero buttons -->
+                <div class="hero-actions">
+
+                    <a class="button button-primary" href="#report">
+                        Report an Issue
+                    </a>
+<!-- button tag ke andar href kaam nhi karta isiliye anchor tag ka use kiya gaya hai -->
+                    <a class="text-link" href="#issues">
+                        Explore Reports
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right side: Neighbourhood illustration -->
+            <div class="hero-illustration">
+    <img
+        src="OIP.jpg"
+        alt="Neighbourhood illustration"
+        class="neighbourhood-image"
+    >
+</div>
+        </section>
+
+
+        <!-- =================================
+             3. DASHBOARD STATISTICS
+             ================================= -->
+
+        <section class="stats section">
+
+            <!-- Total reports -->
+            <div class="stat-card">
+
+                <span class="stat-icon purple">▤</span>
+
+                <div>
+                    <p>Total Reports</p>
+                    <strong id="totalCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Pending reports -->
+            <div class="stat-card">
+
+                <span class="stat-icon orange">◷</span>
+
+                <div>
+                    <p>Pending</p>
+                    <strong id="pendingCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- In progress reports -->
+            <div class="stat-card">
+
+                <span class="stat-icon blue">↻</span>
+
+                <div>
+                    <p>In Progress</p>
+                    <strong id="progressCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Resolved reports -->
+            <div class="stat-card">
+
+                <span class="stat-icon green">✓</span>
+
+                <div>
+                    <p>Resolved</p>
+                    <strong id="resolvedCount">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             4. REPORT FORM AND ISSUE LIST
+             ================================= -->
+
+        <section class="content-grid section">
+
+
+            <!-- REPORT ISSUE FORM -->
+            <section class="panel report-panel" id="report">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">MAKE A DIFFERENCE</p>
+                        <h2>Report an Issue</h2>
+                    </div>
+
+                    <span class="heading-icon">+</span>
+
+                </div>
+
+
+                <p class="muted">
+                    Tell us what needs attention.
+                    Fields marked * are required.
+                </p>
+
+
+                <!-- Form starts here -->
+                <form id="issueForm">
+
+
+                    <!-- Issue title -->
+                    <div class="form-row">
+
+                        <label for="issueTitle">
+                            Issue Title *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="issueTitle"
+                            name="title"
+                            maxlength="70"
+                            placeholder="e.g. Streetlight not working"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Category and location -->
+                    <div class="form-row two-columns">
+
+
+                        <!-- Category dropdown -->
+                        <div>
+
+                            <label for="category">
+                                Category *
+                            </label>
+
+                            <select id="category" name="category" required>
+
+                                <option value="">
+                                    Choose a category
+                                </option>
+
+                                <option>Roads & Potholes</option>
+
+                                <option>Streetlights</option>
+
+                                <option>Garbage & Cleanliness</option>
+
+                                <option>Water Supply</option>
+
+                                <option>Drainage</option>
+
+                                <option>Public Safety</option>
+
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Location -->
+                        <div>
+
+                            <label for="location">
+                                Location *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                maxlength="100"
+                                placeholder="Street or area"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Issue description -->
+                    <div class="form-row">
+
+                        <label for="description">
+                            Description *
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Describe the problem..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Image upload -->
+                    <div class="form-row">
+
+                        <label for="photo">
+                            Upload Photo (Optional)
+                        </label>
+
+                        <input
+                            type="file"
+                            id="photo"
+                            name="photo"
+                            accept="image/*"
+                        >
+
+                        <p class="input-hint">
+                            Select an image smaller than 1 MB.
+                        </p>
+
+                        <!-- Image preview -->
+                        <img
+                            id="photoPreview"
+                            class="photo-preview hidden"
+                            alt="Selected issue photo"
+                        >
+
+                    </div>
+
+
+                    <!-- Submit button -->
+                    <button
+                        type="submit"
+                        class="button button-primary submit-button"
+                    >
+                        Submit Report
+                    </button>
+
+
+                    <!-- Success or error message -->
+                    <p
+                        id="formMessage"
+                        class="form-message"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+
+                </form>
+
+            </section>
+
+
+            <!-- RECENT REPORTS SECTION -->
+            <section class="panel issues-panel" id="issues">
+
+                <div class="section-heading issues-heading">
+
+                    <div>
+                        <p class="eyebrow">COMMUNITY BOARD</p>
+                        <h2>Recent Reports</h2>
+                    </div>
+
+                    <span class="report-count" id="visibleCount">
+                        0 reports
+                    </span>
+
+                </div>
+
+
+                <!-- Search and status filter -->
+                <div class="filters">
+
+
+                    <!-- Search input -->
+                    <label class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Search reports..."
+                            aria-label="Search reports"
+                        >
+
+                    </label>
+                    
+                    <select id="statusFilter">
+    <option value="all">All Statuses</option>
+    <option value="Pending">Pending</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Resolved">Resolved</option>
+                            </select>
+
+
+                    <!-- Status filter -->
+                    <select id="statusFilter">
+
+                        <option value="All">
+                            All Statuses
+                        </option>
+
+                        <option>Pending</option>
+
+                        <option>In Progress</option>
+
+                        <option>Resolved</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- JavaScript displays report cards here -->
+                <div
+                    id="issueList"
+                    class="issue-list"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Message when there are no reports -->
+                <div id="emptyState" class="empty-state">
+
+                    <span>✦</span>
+
+                    <h3>No Reports Yet</h3>
+
+                    <p>
+                        Be the first to report an issue
+                        in your neighbourhood.
+                    </p>
+
+                </div>
+
+
+                <p class="demo-note">
+                    Demo note: reports are saved only
+                    in this browser using local storage.
+                </p>
+
+            </section>
+
+        </section>
+
+
+        <!-- =================================
+             5. HOW IT WORKS SECTION
+             ================================= -->
+
+        <section class="how-section section">
+
+            <p class="eyebrow">HOW IT WORKS</p>
+
+            <h2>Three steps to a better block.</h2>
+
+
+            <div class="steps">
+
+
+                <!-- Step 1 -->
+                <article>
+
+                    <span>01</span>
+
+                    <h3>Notice</h3>
+
+                    <p>
+                        See something that needs fixing
+                        in your neighbourhood.
+                    </p>
+
+                </article>
+
+
+                <!-- Step 2 -->
+                <article>
+
+                    <span>02</span>
+
+                    <h3>Report</h3>
+
+                    <p>
+                        Share the location and details
+                        so others can understand the issue.
+                    </p>
+
+                </article>
+
+
+                <!-- Step 3 -->
+                <article>
+
+                    <span>03</span>
+
+                    <h3>Follow Up</h3>
+
+                    <p>
+                        Track the demo status as the
+                        report moves towards resolution.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================
+         6. FOOTER
+         ================================= -->
+
+    <footer class="site-footer">
+
+        <a class="brand" href="#home">
+
+            <span class="brand-mark">N</span>
+
+            <span>Neighbourhood Connect</span>
+
+        </a>
+
+
+        <p>
+            Built for stronger, more connected neighbourhoods.
+        </p>
+
+
+        <span>
+            © 2026 Neighbourhood Connect
+        </span>
+
+    </footer>
+
+</body>
+
+</html>

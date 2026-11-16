@@ -1,0 +1,701 @@
+
+/* =====================================
+   1. BASIC WEBSITE SETTINGS
+   ===================================== */
+
+/* Apply these settings to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Main settings for the whole webpage */
+body {
+    margin: 0;
+    background-color: #f8f8fc;
+    color: #20233b;
+    font-family: Arial, sans-serif;
+}
+
+/* Smooth scrolling when clicking navigation links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Remove underline from links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =====================================
+   2. NAVIGATION BAR
+   ===================================== */
+
+.site-header {
+    height: 76px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid #ececf3;
+
+    /* Keeps navbar at the top while scrolling */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Website logo and name */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Small square behind the logo letter */
+.brand-mark {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background-color: #6656d9;
+    color: white;
+}
+
+/* Navigation links */
+.main-nav {
+    display: flex;
+    gap: 30px;
+    font-size: 14px;
+    color: #686b80;
+}
+
+/* Colour changes when mouse moves over a link */
+.main-nav a:hover {
+    color: #6656d9;
+}
+
+/* Button on the right side of navbar */
+.header-cta {
+    background-color: #f0efff;
+    color: #5142bf;
+    padding: 11px 17px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =====================================
+   3. COMMON SECTION SETTINGS
+   ===================================== */
+
+.section {
+    width: 88%;
+    max-width: 1120px;
+    margin: auto;
+}
+
+/* Small heading above main headings */
+.eyebrow {
+    color: #6656d9;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+/* =====================================
+   4. HERO SECTION
+   ===================================== */
+
+.hero {
+    min-height: 430px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+/* Main website heading */
+h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+/* Highlighted part of heading */
+h1 span {
+    color: #6656d9;
+}
+
+/* Description below heading */
+.hero-description {
+    color: #777b91;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* Buttons in hero section */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Common button design */
+.button {
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Main purple button */
+.button-primary {
+    background-color: #6656d9;
+    color: white;
+}
+
+/* Hover effect for main button */
+.button-primary:hover {
+    background-color: #5142bf;
+}
+
+/* =====================================
+   5. HERO ILLUSTRATION
+   ===================================== */
+
+/* Neighbourhood Illustration */
+
+.neighbourhood-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Mobile responsive */
+@media (max-width: 700px) {
+    .hero-illustration {
+        max-width: 100%;
+    }
+
+    .neighbourhood-image {
+        max-height: 260px;
+    }
+}
+
+
+/* Small message on illustration */
+.art-label {
+    position: absolute;
+    z-index: 6;
+    bottom: 18px;
+    right: 18px;
+    background-color: white;
+    padding: 9px 13px;
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* =====================================
+   6. DASHBOARD STATISTICS
+   ===================================== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+/* Each statistics card */
+.stat-card {
+    background-color: white;
+    border: 1px solid #ececf3;
+    border-radius: 15px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Small icons in statistics cards */
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Different colours for statistics */
+.purple {
+    background-color: #f0efff;
+    color: #6656d9;
+}
+
+.orange {
+    background-color: #fff2e7;
+    color: #dc914d;
+}
+
+.blue {
+    background-color: #eaf3ff;
+    color: #5894d9;
+}
+
+.green {
+    background-color: #e9f8f0;
+    color: #4eaa7e;
+}
+
+/* =====================================
+   7. MAIN CONTENT AND PANELS
+   ===================================== */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 18px;
+    align-items: start;
+}
+
+/* White boxes containing the form and reports */
+.panel {
+    background-color: white;
+    border: 1px solid #ececf3;
+    border-radius: 17px;
+    padding: 25px;
+}
+
+/* Heading inside panels */
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Panel heading text */
+.section-heading h2 {
+    font-size: 23px;
+}
+
+/* Small purple plus icon */
+.heading-icon {
+    width: 34px;
+    height: 34px;
+    background-color: #f0efff;
+    color: #6656d9;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+}
+
+/* Normal descriptive text */
+.muted {
+    font-size: 12px;
+    color: #777b91;
+    line-height: 1.6;
+}
+
+/* =====================================
+   8. REPORT FORM
+   ===================================== */
+
+/* Space below every form field */
+.form-row {
+    margin-bottom: 16px;
+}
+
+/* Form labels */
+.form-row label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Input, dropdown and textarea design */
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #e7e7ef;
+    border-radius: 9px;
+    padding: 12px;
+    font-size: 12px;
+    background-color: white;
+    outline: none;
+}
+
+/* Highlight field when user clicks it */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8c80e8;
+    box-shadow: 0 0 0 3px #6656d918;
+}
+
+/* Description box */
+textarea {
+    resize: vertical;
+    min-height: 95px;
+}
+
+/* Two fields in one row */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Small image information */
+.input-hint {
+    font-size: 10px;
+    color: #999bad;
+}
+
+/* Image preview */
+.photo-preview {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Hide elements when needed */
+.hidden {
+    display: none !important;
+}
+
+/* Submit button */
+.submit-button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Form feedback messages */
+.form-message {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Success message colour */
+.form-message.success {
+    color: #25875d;
+}
+
+/* Error message colour */
+.form-message.error {
+    color: #c34c4c;
+}
+
+/* =====================================
+   9. REPORT SEARCH AND FILTERS
+   ===================================== */
+
+.issues-heading {
+    margin-bottom: 20px;
+}
+
+/* Number of reports shown */
+.report-count {
+    font-size: 10px;
+    color: #777b91;
+    background-color: #f5f5fa;
+    padding: 7px 10px;
+    border-radius: 20px;
+}
+
+/* Search and filter layout */
+.filters {
+    display: grid;
+    grid-template-columns: 1fr 145px;
+    gap: 9px;
+    margin-bottom: 15px;
+}
+
+/* =====================================
+   10. REPORT CARDS
+   ===================================== */
+
+/* Space between report cards */
+.issue-list {
+    display: grid;
+    gap: 10px;
+}
+
+/* Individual report card */
+.issue-card {
+    border: 1px solid #ececf3;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/* Top part of report card */
+.issue-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Report title */
+.issue-card h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Location and date */
+.issue-meta {
+    font-size: 10px;
+    color: #777b91;
+}
+
+/* Report description */
+.issue-description {
+    font-size: 11px;
+    color: #666a7f;
+    line-height: 1.6;
+}
+
+/* Status label */
+.status {
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 6px 9px;
+}
+
+/* Pending status */
+.status-pending {
+    background-color: #fff3e5;
+    color: #b9782d;
+}
+
+/* In progress status */
+.status-in-progress {
+    background-color: #eaf3ff;
+    color: #477ebc;
+}
+
+/* Resolved status */
+.status-resolved {
+    background-color: #e8f7ef;
+    color: #32865e;
+}
+
+/* Bottom part of report card */
+.issue-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Category label */
+.category-tag {
+    font-size: 9px;
+    color: #77758d;
+    background-color: #f4f3fb;
+    padding: 5px 8px;
+    border-radius: 6px;
+}
+
+/* Status dropdown inside report card */
+.demo-status {
+    width: auto;
+    font-size: 10px;
+    padding: 6px 8px;
+}
+
+/* Attached report image */
+.issue-photo {
+    width: 100%;
+    max-height: 145px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* =====================================
+   11. EMPTY REPORT MESSAGE
+   ===================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 40px 12px;
+    color: #777b91;
+}
+
+.empty-state h3 {
+    font-size: 14px;
+    color: #20233b;
+}
+
+.empty-state p {
+    font-size: 11px;
+}
+
+/* Note about demo storage */
+.demo-note {
+    font-size: 10px;
+    color: #9a9bab;
+    border-top: 1px solid #ececf3;
+    padding-top: 13px;
+}
+
+/* =====================================
+   12. HOW IT WORKS SECTION
+   ===================================== */
+
+.how-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+/* Three step cards */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+/* Each step */
+.steps article {
+    background-color: white;
+    border: 1px solid #ececf3;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+/* Step number */
+.steps article span {
+    color: #6656d9;
+    font-weight: bold;
+}
+
+/* Step title */
+.steps h3 {
+    font-size: 15px;
+}
+
+/* Step description */
+.steps p {
+    font-size: 11px;
+    line-height: 1.7;
+    color: #777b91;
+}
+
+/* =====================================
+   13. FOOTER
+   ===================================== */
+
+.site-footer {
+    background-color: #22243d;
+    color: white;
+    padding: 27px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Footer text */
+.site-footer p,
+.site-footer > span {
+    font-size: 10px;
+    color: #b8b8c8;
+}
+
+/* =====================================
+   14. RESPONSIVE DESIGN
+   ===================================== */
+
+/* For tablets and medium screens */
+@media (max-width: 850px) {
+
+    .hero {
+        gap: 25px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+
+    .site-header {
+        height: auto;
+        padding: 12px 5%;
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .hero-art {
+        height: 245px;
+    }
+
+    .stats {
+        gap: 9px;
+    }
+
+    .stat-card {
+        padding: 13px;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
