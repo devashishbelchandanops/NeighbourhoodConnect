@@ -47,12 +47,11 @@ a {
 }
 
 /* Website logo and name */
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: bold;
+.website-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
 }
 
 /* Small square behind the logo letter */
