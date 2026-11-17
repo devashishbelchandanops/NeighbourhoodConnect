@@ -30,6 +30,11 @@ a {
 /* =====================================
    2. NAVIGATION BAR
    ===================================== */
+.brand{display:flex;
+flex-direction:row;
+align-items:center;
+gap:10px;
+}
 
 .site-header {
     height: 76px;
