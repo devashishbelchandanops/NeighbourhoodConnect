@@ -27,9 +27,7 @@ a {
     color: inherit;
 }
 
-/* =====================================
-   2. NAVIGATION BAR
-   ===================================== */
+/* 2. NAVIGATION BAR */
 .brand{display:flex;
 flex-direction:row;
 align-items:center;
@@ -88,9 +86,7 @@ gap:10px;
     font-weight: bold;
 }
 
-/* =====================================
-   3. COMMON SECTION SETTINGS
-   ===================================== */
+/*3. COMMON SECTION SETTINGS*/
 
 .section {
     width: 88%;
