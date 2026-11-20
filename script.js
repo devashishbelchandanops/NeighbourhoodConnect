@@ -1,15 +1,9 @@
 
-// ========================================
-// NEIGHBOURHOOD CONNECT
-// JavaScript for Issue Reporting Website
-// ========================================
-
-
 // 1. VARIABLES
 
 // Array to store all reported issues
 let reports = [];
-
+zz
 
 // 2. GET HTML ELEMENTS
 
@@ -75,10 +69,10 @@ function addReport(event) {
         date: new Date().toLocaleDateString()
     };
 
-    // Add the new object to the reports array
+    // Adding the new object to the reports array
     reports.push(newReport);
 
-    // Clear the form
+    // Resetting the form fields after submission
     issueForm.reset();
 
     // Show success message
